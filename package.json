@@ -1,5 +1,5 @@
 {
-  "name": "lead-contributor-back-office",
+  "name": "testlto",
   "main": "dist/main.js",
   "files": ["dist"],
   "private": true,
