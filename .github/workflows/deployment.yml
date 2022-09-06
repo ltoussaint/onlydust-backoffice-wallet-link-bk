@@ -18,6 +18,11 @@ jobs:
       - run: yarn install --from-lockfile
       - name: Build project
         run: yarn build
+      - name: format package version
+        run: echo "PKG_VERSION=${github.ref:1}" >> $GITHUB_ENV
+      - name: upgrade package
+        run: yarn version --new-version ${env.PKG_VERSION}
+      - run: git push  
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
