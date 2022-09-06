@@ -1,6 +1,10 @@
 {
-  "name": "lead-contributor-back-office",
-  "private": true,
+  "name": "testlto2",
+  "main": "dist/main.js",
+  "private": false,
+  "files": [
+    "dist"
+  ],
   "version": "0.0.0",
   "type": "module",
   "scripts": {
