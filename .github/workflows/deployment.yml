@@ -1,0 +1,23 @@
+name: Deployment
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn install --from-lockfile
+      - name: Build project
+        run: yarn build
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
