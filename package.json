@@ -4,7 +4,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.0.6",
+  "version": "v0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
