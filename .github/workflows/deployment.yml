@@ -21,12 +21,12 @@ jobs:
       - name: format package version
         run: |
           echo "PKG_VERSION=${GITHUB_REF_NAME:1}" >> $GITHUB_ENV
-      - name: upgrade package
-        run: yarn version --new-version ${{ env.PKG_VERSION }}
       - name: Initialize mandatory git config
         run: |
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com
+      - name: upgrade package
+        run: yarn version --new-version ${{ env.PKG_VERSION }}
       - run: git push  
       - run: yarn publish
         env:
