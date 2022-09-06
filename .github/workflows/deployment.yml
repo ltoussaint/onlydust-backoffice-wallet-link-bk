@@ -20,7 +20,8 @@ jobs:
         run: yarn build
       - name: format package version
         run: |
-          echo "PKG_VERSION=${env.GITHUB_REF:1}" >> $GITHUB_ENV
+          echo "GITHUB_REF_NAME = ${GITHUB_REF_NAME}";
+          echo "PKG_VERSION=${env.GITHUB_REF_NAME:1}" >> $GITHUB_ENV
       - name: upgrade package
         run: yarn version --new-version ${env.PKG_VERSION}
       - run: git push  
