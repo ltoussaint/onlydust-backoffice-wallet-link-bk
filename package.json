@@ -1,8 +1,10 @@
 {
   "name": "testlto",
   "main": "dist/main.js",
-  "files": ["dist"],
-  "version": "0.0.5",
+  "files": [
+    "dist"
+  ],
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
