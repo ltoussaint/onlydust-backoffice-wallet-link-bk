@@ -2,8 +2,7 @@
   "name": "testlto",
   "main": "dist/main.js",
   "files": ["dist"],
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
