@@ -26,7 +26,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com
       - name: upgrade package
-        run: yarn version --new-version ${{ env.PKG_VERSION }}
+        run: yarn version --no-git-tag-version --new-version ${{ env.PKG_VERSION }} 
       - run: git push  
       - run: yarn publish
         env:
