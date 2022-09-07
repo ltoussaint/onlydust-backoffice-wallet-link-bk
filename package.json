@@ -1,6 +1,7 @@
 {
   "name": "testlto2",
   "main": "dist/main.js",
+  "private": false,
   "files": [
     "dist"
   ],
