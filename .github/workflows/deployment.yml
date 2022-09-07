@@ -21,20 +21,20 @@ jobs:
       - name: format package version
         run: |
           echo "PKG_VERSION=${GITHUB_REF_NAME:1}" >> $GITHUB_ENV
-      - name: Initialize mandatory git config
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email noreply@github.com
-      - name: Checkout stable branch
-        run: |
-          git fetch origin
-          git checkout main
-      - name: Reset on main
-        run: |
-          git reset --hard origin/main
+      # - name: Initialize mandatory git config
+      #   run: |
+      #     git config user.name "GitHub Actions"
+      #     git config user.email noreply@github.com
+      # - name: Checkout stable branch
+      #   run: |
+      #     git fetch origin
+      #     git checkout main
+      # - name: Reset on main
+      #   run: |
+      #     git reset --hard origin/main
       - name: upgrade package
         run: yarn version --no-git-tag-version --new-version ${{ env.PKG_VERSION }} 
-      - run: git push origin HEAD:main
+      # - run: git push origin HEAD:main
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
